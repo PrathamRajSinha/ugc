@@ -1,0 +1,391 @@
+import React from 'react';
+import { Play, Instagram, Mail, Phone, Gift, Utensils, Plane, Smartphone, Camera, Star } from 'lucide-react';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white font-inter">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5"></div>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 tracking-tight">
+              [Your Name]
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
+              Voiceover UGC creator for tech, food, grooming, travel & lifestyle brands
+            </p>
+          </div>
+          
+          {/* Category Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 mt-12">
+            <a href="#food" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+              <Utensils className="w-5 h-5 text-orange-500" />
+              <span className="font-medium text-gray-800">Food & Lifestyle</span>
+            </a>
+            <a href="#travel" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+              <Plane className="w-5 h-5 text-blue-500" />
+              <span className="font-medium text-gray-800">Travel & Hotels</span>
+            </a>
+            <a href="#tech" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-purple-500" />
+              <span className="font-medium text-gray-800">Tech & Grooming</span>
+            </a>
+          </div>
+          
+          <div className="animate-bounce mt-16">
+            <div className="w-8 h-8 border-2 border-gray-400 rounded-full mx-auto flex items-center justify-center">
+              <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Food & Lifestyle Section */}
+      <section id="food" className="py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+              <Utensils className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Food & Lifestyle</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mb-4 rounded-full"></div>
+            <p className="text-gray-600 text-lg">Aesthetic food styling and lifestyle content that makes mouths water</p>
+          </div>
+          
+          {/* Food Video Samples */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-orange-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Restaurant Review</h3>
+                <p className="text-gray-600">Aesthetic food presentation</p>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-red-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Cafe Experience</h3>
+                <p className="text-gray-600">Lifestyle & ambiance</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Food Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[1, 2, 3, 4].map((index) => (
+              <div key={index} className="group relative">
+                <div className="aspect-square bg-gradient-to-br from-orange-200 to-red-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                        <Camera className="w-6 h-6 text-orange-500" />
+                      </div>
+                      <p className="text-sm text-gray-700 font-medium">Food {index}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Food Rate Card */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Food & Lifestyle Packages</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border border-orange-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Restaurant Review</h4>
+                <div className="text-2xl font-bold text-orange-600 mb-3">₹1,500</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• 1 detailed food review video</li>
+                  <li>• 5 aesthetic food photos</li>
+                  <li>• Instagram story highlights</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-6 text-white">
+                <h4 className="text-lg font-bold mb-2">Cafe Package</h4>
+                <div className="text-2xl font-bold mb-3">₹3,000</div>
+                <ul className="space-y-2 text-sm">
+                  <li>• 3 UGC videos (ambiance + food)</li>
+                  <li>• 10 styled photos</li>
+                  <li>• Menu highlight reel</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Barter Available</h4>
+                <div className="text-lg font-bold text-emerald-600 mb-3">Product Exchange</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Content for meals</li>
+                  <li>• Long-term partnerships</li>
+                  <li>• Social media coverage</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Travel & Hotels Section */}
+      <section id="travel" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+              <Plane className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Travel & Hotels</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-4 rounded-full"></div>
+            <p className="text-gray-600 text-lg">Wanderlust-inducing content that showcases destinations beautifully</p>
+          </div>
+          
+          {/* Travel Video Samples */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-blue-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Hotel Experience</h3>
+                <p className="text-gray-600">Luxury accommodation showcase</p>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-cyan-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Destination Guide</h3>
+                <p className="text-gray-600">Travel tips & highlights</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Travel Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[1, 2, 3, 4].map((index) => (
+              <div key={index} className="group relative">
+                <div className="aspect-square bg-gradient-to-br from-blue-200 to-cyan-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                        <Camera className="w-6 h-6 text-blue-500" />
+                      </div>
+                      <p className="text-sm text-gray-700 font-medium">Travel {index}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Travel Rate Card */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Travel & Hotel Packages</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Hotel Review</h4>
+                <div className="text-2xl font-bold text-blue-600 mb-3">₹2,000</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• 1 comprehensive hotel tour</li>
+                  <li>• Room & amenities showcase</li>
+                  <li>• 8 professional photos</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 text-white">
+                <h4 className="text-lg font-bold mb-2">Destination Package</h4>
+                <div className="text-2xl font-bold mb-3">₹4,500</div>
+                <ul className="space-y-2 text-sm">
+                  <li>• 5 travel videos</li>
+                  <li>• 15 destination photos</li>
+                  <li>• Travel guide content</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Collaboration</h4>
+                <div className="text-lg font-bold text-emerald-600 mb-3">Stay Exchange</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Content for accommodation</li>
+                  <li>• Multi-platform coverage</li>
+                  <li>• Long-term partnerships</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech & Grooming Section */}
+      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+              <Smartphone className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Tech & Grooming</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mb-4 rounded-full"></div>
+            <p className="text-gray-600 text-lg">Authentic reviews and unboxings that build trust and drive conversions</p>
+          </div>
+          
+          {/* Tech Video Samples */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-purple-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Tech Unboxing</h3>
+                <p className="text-gray-600">First impressions & setup</p>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-video flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-indigo-500 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">Grooming Routine</h3>
+                <p className="text-gray-600">Product demonstration</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            {[1, 2, 3, 4].map((index) => (
+              <div key={index} className="group relative">
+                <div className="aspect-square bg-gradient-to-br from-purple-200 to-indigo-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                        <Camera className="w-6 h-6 text-purple-500" />
+                      </div>
+                      <p className="text-sm text-gray-700 font-medium">Tech {index}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Tech Rate Card */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Tech & Grooming Packages</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Product Review</h4>
+                <div className="text-2xl font-bold text-purple-600 mb-3">₹1,200</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• 1 detailed review video</li>
+                  <li>• Unboxing experience</li>
+                  <li>• 5 product photos</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl p-6 text-white">
+                <h4 className="text-lg font-bold mb-2">Complete Package</h4>
+                <div className="text-2xl font-bold mb-3">₹3,500</div>
+                <ul className="space-y-2 text-sm">
+                  <li>• 4 UGC videos</li>
+                  <li>• Before/after content</li>
+                  <li>• 10 styled photos</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Brand Partnership</h4>
+                <div className="text-lg font-bold text-emerald-600 mb-3">Product Exchange</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Content for products</li>
+                  <li>• Honest reviews</li>
+                  <li>• Multi-platform posts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-4 rounded-full"></div>
+            <p className="text-gray-600 text-lg">Ready to create something amazing? Get in touch!</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <a href="https://instagram.com/yourusername" className="group">
+              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Instagram className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Instagram</h3>
+                <p className="text-gray-600">@yourusername</p>
+              </div>
+            </a>
+            
+            <a href="mailto:youremail@example.com" className="group">
+              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
+                <p className="text-gray-600">youremail@example.com</p>
+              </div>
+            </a>
+            
+            <a href="https://wa.me/1234567890" className="group">
+              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
+                <p className="text-gray-600">Quick chat</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-gray-900 text-center">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-gray-400">
+            © 2025 [Your Name]. Creating authentic content that converts.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
