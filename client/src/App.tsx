@@ -71,6 +71,10 @@ function App() {
               <Plane className="w-5 h-5 text-blue-500" />
               <span className="font-medium text-gray-800">Travel & Hotels</span>
             </button>
+            <button onClick={() => smoothScroll('tech')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-purple-500" />
+              <span className="font-medium text-gray-800">Tech & Grooming</span>
+            </button>
             <button onClick={() => smoothScroll('contact')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
               <Mail className="w-5 h-5 text-green-500" />
               <span className="font-medium text-gray-800">Get In Touch</span>
@@ -297,8 +301,8 @@ function App() {
         </div>
       </section>
 
-      {/* Tech & Grooming Section - Hidden until content is provided */}
-      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50 hidden" data-animate>
+      {/* Tech & Grooming Section */}
+      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50" data-animate>
         <div className="max-w-6xl mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
@@ -314,17 +318,12 @@ function App() {
             <div className="group animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <video 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-[9/16] object-cover"
                   controls
                   poster="/src/assets/tech/tech-1.jpeg"
                 >
-                  <source src="/src/assets/videos/tech-video-1.mp4" type="video/mp4" />
+                  <source src="/src/assets/tech/tech-video-1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                    <Play className="w-8 h-8 text-purple-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Tech Unboxing</h3>
@@ -334,16 +333,13 @@ function App() {
             
             <div className="group animate-slide-in-right">
               <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <img 
-                  src="/src/assets/tech/tech-2.jpeg" 
-                  alt="Grooming Routine" 
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-indigo-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
+                <video 
+                  className="w-full aspect-[9/16] object-cover"
+                  controls
+                  poster="/src/assets/tech/tech-1.jpeg"
+                >
+                  <source src="/src/assets/tech/tech-video-2.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Grooming Routine</h3>
