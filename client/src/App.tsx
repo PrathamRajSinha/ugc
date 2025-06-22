@@ -137,7 +137,7 @@ function App() {
           {/* Food Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34].slice(0, showMoreFood ? 32 : 12).map((index, i) => (
+              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].slice(0, showMoreFood ? 18 : 8).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
@@ -243,7 +243,7 @@ function App() {
           {/* Travel Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7].slice(0, showMoreTravel ? 6 : 4).map((index, i) => (
+              {[3, 4, 5, 6, 7, 8, 9, 10].slice(0, showMoreTravel ? 8 : 6).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
@@ -350,7 +350,7 @@ function App() {
 
           {/* Tech Photo Gallery */}
           <div className={`grid grid-cols-2 gap-4 max-w-md mx-auto mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[2, 3].map((index, i) => (
+            {[1, 2, 3, 4, 5, 6].map((index, i) => (
               <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                   <img 
