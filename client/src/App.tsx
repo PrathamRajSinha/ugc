@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Play, Instagram, Mail, Phone, Gift, Utensils, Plane, Smartphone, Camera, Star } from 'lucide-react';
+import { Play, Instagram, Mail, Phone, Gift, Utensils, Plane, Camera, Star } from 'lucide-react';
 import { ContactForm } from './components/ContactForm';
 
 function App() {
@@ -71,10 +71,7 @@ function App() {
               <Plane className="w-5 h-5 text-blue-500" />
               <span className="font-medium text-gray-800">Travel & Hotels</span>
             </button>
-            <button onClick={() => smoothScroll('tech')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-purple-500" />
-              <span className="font-medium text-gray-800">Tech & Grooming</span>
-            </button>
+
             <button onClick={() => smoothScroll('contact')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
               <Mail className="w-5 h-5 text-green-500" />
               <span className="font-medium text-gray-800">Get In Touch</span>
@@ -243,7 +240,7 @@ function App() {
           {/* Travel Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].slice(0, showMoreTravel ? 11 : 6).map((index, i) => (
+              {[1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].slice(0, showMoreTravel ? 18 : 6).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
@@ -301,103 +298,7 @@ function App() {
         </div>
       </section>
 
-      {/* Tech & Grooming Section */}
-      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50" data-animate>
-        <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-              <Smartphone className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Tech & Grooming</h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mb-4 rounded-full"></div>
-            <p className="text-gray-600 text-lg">Authentic reviews and unboxings that build trust and drive conversions</p>
-          </div>
-          
-          {/* Tech Video Samples */}
-          <div className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="group animate-slide-in-left">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <video 
-                  className="w-full aspect-[9/16] object-cover"
-                  controls
-                  poster="/src/assets/tech/tech-1.jpeg"
-                >
-                  <source src="/src/assets/videos/tech-video-1.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-900">Tech Unboxing</h3>
-                <p className="text-gray-600">First impressions & setup</p>
-              </div>
-            </div>
-            
-            <div className="group animate-slide-in-right">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <video 
-                  className="w-full aspect-[9/16] object-cover"
-                  controls
-                  poster="/src/assets/tech/tech-1.jpeg"
-                >
-                  <source src="/src/assets/videos/tech-video-2.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-900">Grooming Routine</h3>
-                <p className="text-gray-600">Product demonstration</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Tech Photo Gallery */}
-          <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[1, 2, 3, 4, 5, 6].map((index, i) => (
-              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                  <img 
-                    src={`/src/assets/tech/tech-${index}.jpeg`}
-                    alt={`Tech product ${index}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tech Rate Card */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Tech & Grooming Packages</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-200">
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Product Review</h4>
-                <div className="text-2xl font-bold text-purple-600 mb-3">₹1,200</div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• 1 detailed review video</li>
-                  <li>• Unboxing experience</li>
-                  <li>• 5 product photos</li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl p-6 text-white">
-                <h4 className="text-lg font-bold mb-2">Complete Package</h4>
-                <div className="text-2xl font-bold mb-3">₹3,500</div>
-                <ul className="space-y-2 text-sm">
-                  <li>• 4 UGC videos</li>
-                  <li>• Before/after content</li>
-                  <li>• 10 styled photos</li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Brand Partnership</h4>
-                <div className="text-lg font-bold text-emerald-600 mb-3">Product Exchange</div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Content for products</li>
-                  <li>• Honest reviews</li>
-                  <li>• Multi-platform posts</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
