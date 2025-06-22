@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Play, Instagram, Mail, Phone, Gift, Utensils, Plane, Smartphone, Camera, Star } from 'lucide-react';
+import { ContactForm } from './components/ContactForm';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -382,26 +383,32 @@ function App() {
             <p className="text-gray-600 text-lg">Ready to create something amazing? Get in touch!</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <a href="https://instagram.com/thepratham.raj" className="group">
-              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Instagram className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Instagram</h3>
-                <p className="text-gray-600">@thepratham.raj</p>
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="space-y-8">
+              <div className="grid grid-cols-2 gap-6">
+                <a href="https://instagram.com/thepratham.raj" className="group">
+                  <div className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Instagram className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Instagram</h3>
+                    <p className="text-gray-600 text-sm">@thepratham.raj</p>
+                  </div>
+                </a>
+                
+                <a href="mailto:prathamrajsinha@gmail.com" className="group">
+                  <div className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Email</h3>
+                    <p className="text-gray-600 text-sm">prathamrajsinha@gmail.com</p>
+                  </div>
+                </a>
               </div>
-            </a>
+            </div>
             
-            <a href="mailto:prathamrajsinha@gmail.com" className="group">
-              <div className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">prathamrajsinha@gmail.com</p>
-              </div>
-            </a>
+            <ContactForm />
           </div>
         </div>
       </section>
