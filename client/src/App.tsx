@@ -44,19 +44,33 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-inter overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/src/assets/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5"
+          className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         ></div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in"
              style={{ transform: `translateY(${scrollY * -0.2}px)` }}>
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight drop-shadow-lg">
               Pratham Raj Sinha
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-white to-gray-200 mx-auto mb-8 rounded-full"></div>
+            <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md">
               Voiceover UGC creator for tech, food, grooming, travel & lifestyle brands
             </p>
           </div>
@@ -227,15 +241,16 @@ function App() {
             
             <div className="group animate-slide-in-right">
               <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <img 
-                  src="/src/assets/travel/travel-2.jpeg" 
-                  alt="Destination Guide" 
+                <video 
                   className="w-full aspect-[9/16] object-cover"
-                />
+                  controls
+                >
+                  <source src="/src/assets/videos/travel-video-2.mp4" type="video/mp4" />
+                </video>
               </div>
               <div className="mt-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-900">Destination Guide</h3>
-                <p className="text-gray-600">Travel tips & highlights</p>
+                <h3 className="text-lg font-semibold text-gray-900">Travel Experience</h3>
+                <p className="text-gray-600">Authentic travel moments</p>
               </div>
             </div>
           </div>
