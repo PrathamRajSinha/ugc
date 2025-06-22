@@ -5,6 +5,8 @@ import { ContactForm } from './components/ContactForm';
 function App() {
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState<Record<string, boolean>>({});
+  const [showMoreFood, setShowMoreFood] = useState(false);
+  const [showMoreTravel, setShowMoreTravel] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -106,11 +108,6 @@ function App() {
                 >
                   <source src="/src/assets/videos/food-video-1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                    <Play className="w-8 h-8 text-orange-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Restaurant Review</h3>
@@ -125,11 +122,6 @@ function App() {
                   alt="Cafe Experience" 
                   className="w-full aspect-video object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-red-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Cafe Experience</h3>
@@ -139,23 +131,28 @@ function App() {
           </div>
 
           {/* Food Photo Gallery */}
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[3, 4, 5, 6, 7, 8, 9, 10].map((index, i) => (
-              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
-                  <img 
-                    src={`/src/assets/food/food-${index}.jpeg`}
-                    alt={`Food styling ${index}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
-                      <Camera className="w-6 h-6 text-orange-500" />
-                    </div>
+          <div className={`transition-all duration-1000 delay-300 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].slice(0, showMoreFood ? 18 : 8).map((index, i) => (
+                <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <img 
+                      src={`/src/assets/food/food-${index}.jpeg`}
+                      alt={`Food styling ${index}`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="text-center mb-16">
+              <button
+                onClick={() => setShowMoreFood(!showMoreFood)}
+                className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {showMoreFood ? 'Show Less' : 'View More Photos'}
+              </button>
+            </div>
           </div>
 
           {/* Food Rate Card */}
@@ -217,11 +214,6 @@ function App() {
                 >
                   <source src="/src/assets/videos/travel-video-1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                    <Play className="w-8 h-8 text-blue-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Hotel Experience</h3>
@@ -236,11 +228,6 @@ function App() {
                   alt="Destination Guide" 
                   className="w-full aspect-video object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-cyan-500 ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               <div className="mt-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-900">Destination Guide</h3>
@@ -250,23 +237,28 @@ function App() {
           </div>
 
           {/* Travel Photo Gallery */}
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[3, 4, 5, 6, 7, 8, 9, 10].map((index, i) => (
-              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
-                  <img 
-                    src={`/src/assets/travel/travel-${index}.jpeg`}
-                    alt={`Travel destination ${index}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
-                      <Camera className="w-6 h-6 text-blue-500" />
-                    </div>
+          <div className={`transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].slice(0, showMoreTravel ? 18 : 8).map((index, i) => (
+                <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                  <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <img 
+                      src={`/src/assets/travel/travel-${index}.jpeg`}
+                      alt={`Travel destination ${index}`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="text-center mb-16">
+              <button
+                onClick={() => setShowMoreTravel(!showMoreTravel)}
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                {showMoreTravel ? 'Show Less' : 'View More Photos'}
+              </button>
+            </div>
           </div>
 
           {/* Travel Rate Card */}
