@@ -1,13 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Play, Instagram, Mail, Phone, Gift, Utensils, Plane, Smartphone, Camera, Star } from 'lucide-react';
 
 function App() {
+  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('[data-animate]');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const smoothScroll = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white font-inter">
+    <div className="min-h-screen bg-white font-inter overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5"></div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        ></div>
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in"
+             style={{ transform: `translateY(${scrollY * -0.2}px)` }}>
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 tracking-tight">
               [Your Name]
@@ -20,18 +60,18 @@ function App() {
           
           {/* Category Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mt-12">
-            <a href="#food" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+            <button onClick={() => smoothScroll('food')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
               <Utensils className="w-5 h-5 text-orange-500" />
               <span className="font-medium text-gray-800">Food & Lifestyle</span>
-            </a>
-            <a href="#travel" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+            </button>
+            <button onClick={() => smoothScroll('travel')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
               <Plane className="w-5 h-5 text-blue-500" />
               <span className="font-medium text-gray-800">Travel & Hotels</span>
-            </a>
-            <a href="#tech" className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+            </button>
+            <button onClick={() => smoothScroll('tech')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
               <Smartphone className="w-5 h-5 text-purple-500" />
               <span className="font-medium text-gray-800">Tech & Grooming</span>
-            </a>
+            </button>
           </div>
           
           <div className="animate-bounce mt-16">
@@ -43,9 +83,9 @@ function App() {
       </section>
 
       {/* Food & Lifestyle Section */}
-      <section id="food" className="py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50">
+      <section id="food" className="py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50" data-animate>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
               <Utensils className="w-8 h-8 text-white" />
             </div>
