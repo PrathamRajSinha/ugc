@@ -71,7 +71,7 @@ function App() {
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-white to-gray-200 mx-auto mb-8 rounded-full"></div>
             <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-              Voiceover UGC creator for tech, food, grooming, travel & lifestyle brands
+              UGC creator for tech, food, travel & lifestyle brands
             </p>
           </div>
           
