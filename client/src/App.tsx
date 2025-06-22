@@ -239,7 +239,7 @@ function App() {
           {/* Travel Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7, 8, 9, 10, 11].slice(0, showMoreTravel ? 9 : 6).map((index, i) => (
+              {[3, 4, 5, 6, 7, 8, 9, 10].slice(0, showMoreTravel ? 8 : 6).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
