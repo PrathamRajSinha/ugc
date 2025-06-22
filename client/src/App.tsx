@@ -102,7 +102,7 @@ function App() {
             <div className="group animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <video 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-[9/16] object-cover"
                   controls
                   poster="/src/assets/food/food-1.jpeg"
                 >
@@ -120,7 +120,7 @@ function App() {
                 <img 
                   src="/src/assets/food/food-2.jpeg" 
                   alt="Cafe Experience" 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-[9/16] object-cover"
                 />
               </div>
               <div className="mt-4 text-center">
@@ -208,7 +208,7 @@ function App() {
             <div className="group animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <video 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-[9/16] object-cover"
                   controls
                   poster="/src/assets/travel/travel-1.jpeg"
                 >
@@ -226,7 +226,7 @@ function App() {
                 <img 
                   src="/src/assets/travel/travel-2.jpeg" 
                   alt="Destination Guide" 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-[9/16] object-cover"
                 />
               </div>
               <div className="mt-4 text-center">
