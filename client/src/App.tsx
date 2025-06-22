@@ -95,11 +95,11 @@ function App() {
           </div>
           
           {/* Food Video Samples */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="group animate-slide-in-left">
+              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-orange-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -110,10 +110,10 @@ function App() {
               </div>
             </div>
             
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="group animate-slide-in-right">
+              <div className="relative bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-red-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -126,13 +126,13 @@ function App() {
           </div>
 
           {/* Food Photo Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {[1, 2, 3, 4].map((index) => (
-              <div key={index} className="group relative">
-                <div className="aspect-square bg-gradient-to-br from-orange-200 to-red-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="aspect-square bg-gradient-to-br from-orange-200 to-red-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md group-hover:animate-bounce">
                         <Camera className="w-6 h-6 text-orange-500" />
                       </div>
                       <p className="text-sm text-gray-700 font-medium">Food {index}</p>
@@ -180,9 +180,9 @@ function App() {
       </section>
 
       {/* Travel & Hotels Section */}
-      <section id="travel" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section id="travel" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50" data-animate>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
               <Plane className="w-8 h-8 text-white" />
             </div>
@@ -192,11 +192,11 @@ function App() {
           </div>
           
           {/* Travel Video Samples */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="group animate-slide-in-left">
+              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-blue-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -207,10 +207,10 @@ function App() {
               </div>
             </div>
             
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="group animate-slide-in-right">
+              <div className="relative bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-cyan-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -277,9 +277,9 @@ function App() {
       </section>
 
       {/* Tech & Grooming Section */}
-      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50" data-animate>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
               <Smartphone className="w-8 h-8 text-white" />
             </div>
@@ -289,11 +289,11 @@ function App() {
           </div>
           
           {/* Tech Video Samples */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="group animate-slide-in-left">
+              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-purple-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -304,10 +304,10 @@ function App() {
               </div>
             </div>
             
-            <div className="group">
-              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="group animate-slide-in-right">
+              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                 <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
                     <Play className="w-8 h-8 text-indigo-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -320,13 +320,13 @@ function App() {
           </div>
 
           {/* Tech Photo Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {[1, 2, 3, 4].map((index) => (
-              <div key={index} className="group relative">
-                <div className="aspect-square bg-gradient-to-br from-purple-200 to-indigo-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="aspect-square bg-gradient-to-br from-purple-200 to-indigo-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md group-hover:animate-bounce">
                         <Camera className="w-6 h-6 text-purple-500" />
                       </div>
                       <p className="text-sm text-gray-700 font-medium">Tech {index}</p>
