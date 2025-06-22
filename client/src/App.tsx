@@ -137,7 +137,7 @@ function App() {
           {/* Food Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.food ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].slice(0, showMoreFood ? 18 : 8).map((index, i) => (
+              {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34].slice(0, showMoreFood ? 32 : 12).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
@@ -243,7 +243,7 @@ function App() {
           {/* Travel Photo Gallery */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible.travel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[3, 4, 5, 6, 7, 8, 9, 10].slice(0, showMoreTravel ? 8 : 6).map((index, i) => (
+              {[3, 4, 5, 6, 7].slice(0, showMoreTravel ? 6 : 4).map((index, i) => (
                 <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                     <img 
@@ -349,20 +349,15 @@ function App() {
           </div>
 
           {/* Tech Photo Gallery */}
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[3, 4, 5, 6, 7, 8, 9, 10].map((index, i) => (
+          <div className={`grid grid-cols-2 gap-4 max-w-md mx-auto mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {[2, 3].map((index, i) => (
               <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
                   <img 
                     src={`/src/assets/tech/tech-${index}.jpeg`}
                     alt={`Tech product ${index}`}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
-                      <Camera className="w-6 h-6 text-purple-500" />
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
