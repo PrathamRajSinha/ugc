@@ -71,9 +71,9 @@ function App() {
               <Plane className="w-5 h-5 text-blue-500" />
               <span className="font-medium text-gray-800">Travel & Hotels</span>
             </button>
-            <button onClick={() => smoothScroll('tech')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-purple-500" />
-              <span className="font-medium text-gray-800">Tech & Grooming</span>
+            <button onClick={() => smoothScroll('contact')} className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2">
+              <Mail className="w-5 h-5 text-green-500" />
+              <span className="font-medium text-gray-800">Get In Touch</span>
             </button>
           </div>
           
@@ -297,8 +297,8 @@ function App() {
         </div>
       </section>
 
-      {/* Tech & Grooming Section */}
-      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50" data-animate>
+      {/* Tech & Grooming Section - Hidden until content is provided */}
+      <section id="tech" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50 hidden" data-animate>
         <div className="max-w-6xl mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
