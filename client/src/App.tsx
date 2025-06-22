@@ -320,9 +320,16 @@ function App() {
           {/* Tech Video Samples */}
           <div className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="group animate-slide-in-left">
-              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                <video 
+                  className="w-full aspect-video object-cover"
+                  controls
+                  poster="/src/assets/tech/tech-1.jpeg"
+                >
+                  <source src="/src/assets/videos/tech-video-1.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                     <Play className="w-8 h-8 text-purple-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -334,9 +341,14 @@ function App() {
             </div>
             
             <div className="group animate-slide-in-right">
-              <div className="relative bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
-                <div className="aspect-video flex items-center justify-center">
-                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                <img 
+                  src="/src/assets/tech/tech-2.jpeg" 
+                  alt="Grooming Routine" 
+                  className="w-full aspect-video object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <div className="bg-white rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Play className="w-8 h-8 text-indigo-500 ml-1" fill="currentColor" />
                   </div>
                 </div>
@@ -350,15 +362,17 @@ function App() {
 
           {/* Tech Photo Gallery */}
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 transition-all duration-1000 delay-300 ${isVisible.tech ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {[1, 2, 3, 4].map((index) => (
-              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="aspect-square bg-gradient-to-br from-purple-200 to-indigo-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md group-hover:animate-bounce">
-                        <Camera className="w-6 h-6 text-purple-500" />
-                      </div>
-                      <p className="text-sm text-gray-700 font-medium">Tech {index}</p>
+            {[3, 4, 5, 6, 7, 8, 9, 10].map((index, i) => (
+              <div key={index} className="group relative animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 hover:rotate-2">
+                  <img 
+                    src={`/src/assets/tech/tech-${index}.jpeg`}
+                    alt={`Tech product ${index}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300">
+                      <Camera className="w-6 h-6 text-purple-500" />
                     </div>
                   </div>
                 </div>
